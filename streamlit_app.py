@@ -5,7 +5,7 @@
     "colab": {
       "provenance": [],
       "mount_file_id": "1xMphHk5BfeKCMg3gUsEGjVpKO4DZmxsr",
-      "authorship_tag": "ABX9TyNvLAytCl2VG9wX01ho1Yx/",
+      "authorship_tag": "ABX9TyOJM7DlNx7/dIPZ+ABTJCh6",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -30,27 +30,25 @@
     {
       "cell_type": "code",
       "source": [
+        "# モジュールの読み込み\n",
         "import pandas as pd\n",
-        "import pygwalker as pyg\n",
         "import streamlit as st\n",
+        "import pygwalker as pyg\n",
         "\n",
-        "# ワイド表示\n",
+        "# 初期設定\n",
         "st.set_page_config(layout=\"wide\")\n",
         "\n",
-        "# タイトル\n",
-        "st.title(\"Data Analysis with PyGWalker.\")\n",
-        "\n",
-        "# データフレームの用意\n",
+        "# CSVファイル取得（サイドパネル）\n",
         "df = None\n",
-        "\n",
-        "# ファイル選択\n",
         "with st.sidebar:\n",
-        "    uploaded_files = st.file_uploader(\"Choose a CSV file\")\n",
-        "    if uploaded_files is not None:\n",
-        "        df = pd.read_csv(uploaded_files)\n",
+        "    input = st.file_uploader(\"Choose a CSV file\")\n",
+        "    if input is not None:\n",
+        "        df = pd.read_csv(input)\n",
         "\n",
-        "# pygwalkerで表示\n",
-        "pyg.walk(df, env='Streamlit')"
+        "# Graphic Walker 操作（メインパネル）\n",
+        "if df is not None:\n",
+        "    output = pyg.walk(df, env='Streamlit')\n",
+        "    st.write(output)"
       ],
       "metadata": {
         "colab": {
