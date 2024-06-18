@@ -4,4 +4,4 @@
 import pandas as pd
 import streamlit as st
 
-st.title('Streamlitへようこそ')
+st.title('Streamlitへようこそ!')
