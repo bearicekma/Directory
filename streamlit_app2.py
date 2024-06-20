@@ -1,5 +1,5 @@
 #以下をapp.pyに書き込む
-pip install pygwalker
+%pip install pygwalker
 
 import pandas as pd
 import pygwalker as pyg
