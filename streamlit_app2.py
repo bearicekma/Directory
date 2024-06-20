@@ -1,4 +1,6 @@
 #以下をapp.pyに書き込む
+pip install pygwalker
+
 import pandas as pd
 import pygwalker as pyg
 import streamlit as st
