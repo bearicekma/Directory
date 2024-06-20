@@ -11,4 +11,7 @@ st.set_page_config(layout="wide")
 st.title("Data Analysis with PyGWalker.")
 
 tips = px.data.tips()
-px.scatter(tips, x="total_bill", y="tip").show()
+fig = px.scatter(tips, x="total_bill", y="tip")
+event = st.plotly_chart(fig)
+
+event
