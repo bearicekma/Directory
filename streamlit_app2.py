@@ -1,5 +1,5 @@
 #以下をapp.pyに書き込む
-uv pip install pygwalker
+pip install -r requirements.txt
 
 import pandas as pd
 import pygwalker as pyg
