@@ -16,7 +16,7 @@ df = None
 with st.sidebar:
     uploaded_files = st.file_uploader("Choose a CSV file")
     if uploaded_files is not None:
-        df = pd.read_csv(uploaded_files)
+        df = pd.read_csv(uploaded_files, encoding='UTF-8')
 
 # pygwalkerで表示
 pyg.walk(df, env='Streamlit')
