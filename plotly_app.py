@@ -12,6 +12,6 @@ st.title("Data Analysis with PyGWalker.")
 
 tips = px.data.tips()
 fig = px.scatter(tips, x="total_bill", y="tip")
-event = st.plotly_chart(fig)
 
-event
+# streamlit上にplotlyを描画
+st.plotly_chart(fig)
